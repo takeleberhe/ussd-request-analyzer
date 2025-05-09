@@ -13,7 +13,7 @@ Tech Stack Highlights:
 bash
 Copy
 Edit
-git clone https://github.com/your-username/ussd-analyzer.git
+git clone https://github.com/takeleberhe/ussd-request-analyzer.git
 cd ussd-analyzer
 2️⃣ Run the Frontend (React UI)
 
@@ -97,11 +97,17 @@ Optional: Manual SQL scripts provided in schema.sql.
 
 🧠 Project Features
 Feature	Description
+
 ✅ Summary Reporting	Success/failure counts per request status.
+
 ✅ Paginated Transactions	Latest N requests shown in descending order.
+
 ✅ Fraud Detection	Flags MSISDNs using multiple voucher codes.
+
 ✅ Blacklisting	Persisted list of blacklisted MSISDNs.
+
 ✅ Swagger Docs	Auto-generated OpenAPI documentation.
+
 ✅ Clean UI	Responsive, modern React.js UI via Tailwind.
 
 🏗️ Project Summary
