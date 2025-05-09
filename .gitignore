@@ -1,0 +1,55 @@
+# General
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+*.log
+
+# React (USSD UI) Frontend
+build/
+dist/
+.cache/
+public/
+*.tsbuildinfo
+
+# React Environment Files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# VS Code
+.vscode/
+
+# Spring Boot (IntelliJ IDEA)
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.jar
+*.war
+*.ear
+*.db
+*.log
+
+# Spring Boot Environment Files
+.env
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Maven Wrapper (Spring Boot)
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Operating System Files
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db

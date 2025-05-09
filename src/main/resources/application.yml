@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/ussd-analyzer_Db} # Default to local if not found
+    username: ${DATABASE_USERNAME:postgres} # Default to 'postgres' if not found
+    password: ${DATABASE_PASSWORD:user1} # Default to 'user1' if not found
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        order_inserts: true
+        jdbc:
+          batch_size: 1000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.boot.web: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.hibernate.SQL: OFF
+    org.hibernate.type.descriptor.sql.BasicBinder: OFF
