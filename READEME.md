@@ -10,21 +10,22 @@ Tech Stack Highlights:
 🚀 How to Clone and Run the Monorepo
 1️⃣ Clone the Repository
 
-bash
-Copy
-Edit
+bash:
+
+
 git clone https://github.com/takeleberhe/ussd-request-analyzer.git
+
 cd ussd-analyzer
 2️⃣ Run the Frontend (React UI)
 
-bash
-Copy
-Edit
+bash:
+
 cd ussd-ui
 npm install
 npm run dev
 🔹 UI will be available at: http://localhost:5173
 🔹 Use VS Code or any modern editor to modify the frontend.
+
 
 3️⃣ Run the Backend (Spring Boot API)
 
@@ -32,17 +33,16 @@ npm run dev
 Open ussd-analyzer in IntelliJ.
 Run UssdAnalyzerApplication.java inside:
 
-swift
-Copy
-Edit
+
+
 src/main/java/com/matrix/ussdanalyzer/UssdAnalyzerApplication.java
 Ensure your PostgreSQL DB is running locally.
 
 ✅ Option B: Using Git Bash or Terminal
 
-bash
-Copy
-Edit
+bash:
+
+
   mvn clean install         # Builds the backend with dependencies
   mvn spring-boot:run       # Runs the Spring Boot app
   
@@ -68,9 +68,6 @@ Ensure PostgreSQL is running locally with a database named ussd_db.
 
 Sample DB credentials from application.yml:
 
-yaml
-Copy
-Edit
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ussd_db
@@ -110,20 +107,24 @@ Feature	Description
 
 ✅ Clean UI	Responsive, modern React.js UI via Tailwind.
 
-🏗️ Project Summary
+🏗️ Project Summary:
+
 To support high traffic loads, ensure low latency, and enable robust system-to-system communication, the USSD Request Analyzer is built on scalable backend engineering principles and optimized system design strategies.
 
-⚙️ Concurrency & Resource Management
+⚙️ Concurrency & Resource Management:
+
 Thread Pool Management:
 All asynchronous processing (e.g., fraud detection) uses a dedicated @Async thread pool, configured with custom executors (TaskExecutor) to avoid resource starvation under heavy load.
 
 Database Connection Pooling:
+
 Uses HikariCP, the industry-standard high-performance JDBC connection pool, tuned for optimal performance and low overhead in high-concurrency environments.
 
 Batch Processing:
 Critical DB operations (e.g., logs, analytics) use batched read/write operations to reduce transaction costs and avoid I/O bottlenecks.
 
-⚡ Performance Optimizations
+⚡ Performance Optimizations:
+
 Caching Layer:
 Frequently accessed responses (e.g., MSISDN fraud status) are cached using Spring Cache, backed by Redis or in-memory fallback, significantly reducing DB hits.
 
@@ -136,7 +137,8 @@ GZIP compression is enabled for all REST responses, reducing payload size and im
 Indexing & Partitioning:
 Strategic indexing on correlation_id, msisdn, and timestamp ensures fast lookups. The schema is partition-ready by time to support future horizontal sharding or time-based archiving.
 
-📡 Communication & Integration
+📡 Communication & Integration:
+
 RESTful APIs:
 Exposes well-structured JSON-based REST APIs, secured with OAuth2 and JWT. API contracts are documented with OpenAPI/Swagger.
 
@@ -149,7 +151,8 @@ RabbitMQ (optional): Configurable queue for sending external alerts, retries, or
 Resilience Patterns:
 Fault-tolerant integrations use Resilience4j for retry, fallback, and rate-limiting. Circuit breakers prevent cascading failures.
 
-🔐 Security & Compliance
+🔐 Security & Compliance:
+
 Authentication & Authorization:
 Implements JWT-based authentication with fine-grained role-based access control (RBAC).
 
@@ -159,7 +162,8 @@ Enforces HTTPS, CORS, and secure headers,Spring Security. REST APIs are protecte
 Secret Management:
 Credentials and sensitive configs are externalized via Spring Cloud Config, Docker secrets, or vault providers to avoid code-level leakage.
 
-☁️ Scalability & Observability
+☁️ Scalability & Observability:
+
 Containerization:
 Backend is Dockerized for environment consistency and horizontal scaling across multiple nodes , infrastructure Autoscaling configurations using kubernets.yml files.
 
@@ -174,7 +178,8 @@ Supports Zipkin/Sleuth for distributed tracing of request flows.
 
 Application logs are structured (JSON) and centralized for log aggregation tools (e.g., ELK stack).
 
-🔭 Future Enhancements
+🔭 Future Enhancements:
+
 Feature	Benefit
 Kafka Streams	Real-time fraud analytics and stream processing
 Grafana Dashboards	Visual monitoring of request rates, latency, errors
@@ -182,5 +187,6 @@ CQRS + Event Sourcing	Improves scalability and auditability of write models
 WebSockets	Real-time transaction updates to UI clients
 API Gateway	Centralized auth, rate-limiting, and request routing
 
- Conclusion
+ Conclusion:
+ 
 By combining asynchronous processing, caching, observability, and message-driven communication, the USSD Request Analyzer is architected to withstand production-level traffic while remaining flexible, modular, and secure. The design is aligned with modern backend engineering principles and enables smooth integration with external systems and analytics platforms.
