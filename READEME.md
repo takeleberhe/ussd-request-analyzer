@@ -2,9 +2,13 @@
 The USSD Request Analyzer is a full-stack project that ingests, analyzes, and displays USSD request-response transactions for voucher purchases.
 
 Tech Stack Highlights:
+
 💻 Spring Boot (Java 17) backend with REST APIs
+
 🌐 React.js + Tailwind CSS frontend via Vite
+
 🗄️ PostgreSQL with Flyway for DB migrations
+
 📘 OpenAPI/Swagger for API docs and testing
 
 🚀 How to Clone and Run the Monorepo
