@@ -27,21 +27,28 @@ cd ussd-analyzer
 bash:
 
 cd ussd-ui
+
 npm install
+
 npm run dev
+
 🔹 UI will be available at: http://localhost:5173
+
 🔹 Use VS Code or any modern editor to modify the frontend.
 
 
 3️⃣ Run the Backend (Spring Boot API)
 
 ✅ Option A: Using IntelliJ IDEA
+
 Open ussd-analyzer in IntelliJ.
+
 Run UssdAnalyzerApplication.java inside:
 
 
 
 src/main/java/com/matrix/ussdanalyzer/UssdAnalyzerApplication.java
+
 Ensure your PostgreSQL DB is running locally.
 
 ✅ Option B: Using Git Bash or Terminal
@@ -50,13 +57,17 @@ bash:
 
 
   mvn clean install         # Builds the backend with dependencies
+  
   mvn spring-boot:run       # Runs the Spring Boot app
   
+  
 Upload Excel Records to PostgreSQL using Postman:
+
 
 -Save your Excel files in .xlsx format first.
 
 -Postman POST Request:
+
 -Excel file upload API: http://localhost:8081/api/excel/upload
 
 -Select form-data
@@ -75,18 +86,25 @@ Ensure PostgreSQL is running locally with a database named ussd_db.
 Sample DB credentials from application.yml:
 
 spring:
+
   datasource:
+  
     url: jdbc:postgresql://localhost:5432/ussd_db
+    
     username: postgres
+    
     password: yourpassword
+    
 🛠 You can edit this in ussd-backend/src/main/resources/application.yml.
 
 ✅ Flyway will auto-create tables on app startup.
 
 📖 API Testing & Documentation
+
 Swagger UI: http://localhost:8081/swagger-ui.html
 
 🧩 SQL Setup & Auto-Migrations
+
 Schema is automatically created using Flyway on startup:
 
 ussd_requests
@@ -96,9 +114,10 @@ ussd_responses
 blacklisted_msisdns
 
 Indexed views for analytics & fraud detection.
-Optional: Manual SQL scripts provided in schema.sql.
+
 
 🧠 Project Features
+
 Feature	Description
 
 ✅ Summary Reporting	Success/failure counts per request status.
